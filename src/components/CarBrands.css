@@ -1,0 +1,99 @@
+.car-brands-section {
+    padding: 3rem 0;
+    background-color: #0f172a;
+    /* Match the dark theme */
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brands-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.brands-header h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Marquee Container */
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    gap: 4rem;
+    padding: 1rem 0;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    cursor: default;
+}
+
+.brand-item:hover {
+    color: #ffffff;
+    transform: translateY(-2px);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.brand-logo-placeholder {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    /* Placeholder for actual logo - using a simple circle or text style */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Pause on hover */
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .marquee-content {
+        gap: 2rem;
+        animation-duration: 30s;
+    }
+
+    .brands-header h3 {
+        font-size: 1.5rem;
+    }
+}
