@@ -71,6 +71,20 @@
     letter-spacing: 0.5px;
 }
 
+.brand-logo {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    max-width: 120px;
+    filter: none;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.brand-item:hover .brand-logo {
+    transform: scale(1.1);
+}
+
 /* Pause on hover */
 .marquee-wrapper:hover .marquee-content {
     animation-play-state: paused;
