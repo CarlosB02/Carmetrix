@@ -85,3 +85,63 @@
 .read-more:hover {
     text-decoration: underline;
 }
+
+.news-carousel-wrapper {
+    position: relative;
+    /* Allows absolute positioning of the button relative to this wrapper */
+    padding-right: 60px;
+    /* Space for the button */
+}
+
+/* Ensure grid doesn't overflow or break layout with animations */
+.news-grid {
+    position: relative;
+    width: 100%;
+    /* Ensure it takes available space inside wrapper */
+}
+
+.carousel-next-btn-minimal {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: var(--text-primary, #333);
+    /* Subtle dark color */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.carousel-next-btn-minimal:hover {
+    opacity: 1;
+    color: var(--accent, #c9a050);
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Hide controls on mobile if needed, or adjust spacing */
+@media (max-width: 768px) {
+    .news-carousel-wrapper {
+        padding-right: 0;
+        padding-bottom: 60px;
+        /* Space for button at bottom on mobile */
+    }
+
+    .carousel-next-btn-minimal {
+        top: auto;
+        bottom: 0;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .carousel-next-btn-minimal:hover {
+        transform: translateX(50%) scale(1.1);
+    }
+}

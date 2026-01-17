@@ -29,10 +29,12 @@ const ConciergeAutomovel = () => {
             </section>
 
             {/* Content Section */}
+            {/* Content Section */}
             <section className="service-content" style={{ padding: '80px 0' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
-                        <div style={{ order: 2 }}>
+                    {/* Top Section: Text + Side Image */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginBottom: '80px' }}>
+                        <div>
                             <h2 style={{ fontSize: '2.5rem', marginBottom: '30px', color: 'var(--primary)' }}>
                                 Gestão 360º
                             </h2>
@@ -63,35 +65,80 @@ const ConciergeAutomovel = () => {
                             </ul>
                         </div>
 
-                        <div style={{ order: 1, display: 'grid', gap: '20px' }}>
-                            <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow)', display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
-                                <div style={{ background: 'var(--background)', padding: '12px', borderRadius: '50%' }}>
-                                    <Key size={24} color="var(--primary)" />
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Chave na Mão</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Recolhemos o seu veículo em casa ou no escritório, tratamos do serviço necessário e devolvemos onde preferir.</p>
-                                </div>
-                            </div>
+                        <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', height: '400px' }}>
+                            <img
+                                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop"
+                                alt="Concierge Profissional"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            />
+                        </div>
+                    </div>
 
-                            <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow)', display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
-                                <div style={{ background: 'var(--background)', padding: '12px', borderRadius: '50%' }}>
-                                    <Calendar size={24} color="var(--primary)" />
-                                </div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Gestão de Prazos</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Nunca mais se esqueça de um seguro, inspeção ou revisão. Nós monitorizamos todos os prazos por si.</p>
-                                </div>
+                    {/* Cards Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px' }}>
+                        {/* Card 1: Chave na Mão */}
+                        <div style={{ background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ height: '200px', overflow: 'hidden' }}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop"
+                                    alt="Chave na Mão"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                />
                             </div>
+                            <div style={{ padding: '30px' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
+                                    <div style={{ background: 'var(--background)', padding: '10px', borderRadius: '50%' }}>
+                                        <Key size={24} color="var(--primary)" />
+                                    </div>
+                                    <h4 style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>Chave na Mão</h4>
+                                </div>
+                                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                                    Recolhemos o seu veículo em casa ou no escritório, tratamos do serviço necessário e devolvemos onde preferir.
+                                </p>
+                            </div>
+                        </div>
 
-                            <div style={{ background: 'white', padding: '30px', borderRadius: '12px', boxShadow: 'var(--shadow)', display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
-                                <div style={{ background: 'var(--background)', padding: '12px', borderRadius: '50%' }}>
-                                    <Clock size={24} color="var(--primary)" />
+                        {/* Card 2: Gestão de Prazos */}
+                        <div style={{ background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ height: '200px', overflow: 'hidden' }}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2072&auto=format&fit=crop"
+                                    alt="Gestão de Prazos"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                />
+                            </div>
+                            <div style={{ padding: '30px' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
+                                    <div style={{ background: 'var(--background)', padding: '10px', borderRadius: '50%' }}>
+                                        <Calendar size={24} color="var(--primary)" />
+                                    </div>
+                                    <h4 style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>Gestão de Prazos</h4>
                                 </div>
-                                <div>
-                                    <h4 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Disponibilidade Total</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Um gestor dedicado sempre disponível para resolver qualquer questão relacionada com o seu automóvel.</p>
+                                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                                    Nunca mais se esqueça de um seguro, inspeção ou revisão. Nós monitorizamos todos os prazos por si.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Card 3: Disponibilidade Total */}
+                        <div style={{ background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ height: '200px', overflow: 'hidden' }}>
+                                <img
+                                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop"
+                                    alt="Disponibilidade Total"
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                />
+                            </div>
+                            <div style={{ padding: '30px' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
+                                    <div style={{ background: 'var(--background)', padding: '10px', borderRadius: '50%' }}>
+                                        <Clock size={24} color="var(--primary)" />
+                                    </div>
+                                    <h4 style={{ fontSize: '1.2rem', fontWeight: 'bold' }}>Disponibilidade Total</h4>
                                 </div>
+                                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
+                                    Um gestor dedicado sempre disponível para resolver qualquer questão relacionada com o seu automóvel.
+                                </p>
                             </div>
                         </div>
                     </div>

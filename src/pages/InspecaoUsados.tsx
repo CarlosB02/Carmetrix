@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Search, ShieldCheck, FileText, CheckCircle } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
+import HotspotCar from '../components/HotspotCar';
 
 const InspecaoUsados = () => {
     return (
@@ -27,6 +28,9 @@ const InspecaoUsados = () => {
                     </motion.div>
                 </div>
             </section>
+
+            {/* Hotspot Section */}
+            <HotspotCar />
 
             {/* Content Section */}
             <section className="service-content" style={{ padding: '80px 0' }}>

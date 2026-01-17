@@ -11,7 +11,7 @@ const Home = () => {
             <Hero />
             <Services />
             <CarBrands />
-            <NewsSection />
+            <NewsSection isCarousel={true} />
             <FAQ />
             <ContactSection />
         </div>

@@ -1,0 +1,669 @@
+/* src/pages/Marketplace.css */
+
+/* ... (Existing styles remain, I will append the new ones) */
+
+.marketplace-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    background-color: var(--background);
+    padding-bottom: 50px;
+}
+
+/* ... Previous styles ... */
+
+.marketplace-hero {
+    background: white;
+    color: var(--primary);
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.marketplace-hero h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.hero-search-bar {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-search-bar input {
+    width: 100%;
+    padding: 15px 60px 15px 50px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.hero-search-bar input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(0, 34, 69, 0.1);
+}
+
+.hero-search-bar .search-icon {
+    position: absolute;
+    left: 20px;
+    color: #888;
+}
+
+.hero-search-bar .search-btn {
+    position: absolute;
+    right: 5px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-search-bar .search-btn:hover {
+    background: var(--primary-light);
+}
+
+/* Search Interface Container */
+.search-container-wrapper {
+    margin-top: -20px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 10;
+}
+
+.search-interface {
+    display: flex;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.search-tabs {
+    background: #f8f9fa;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #eee;
+}
+
+.tab-btn {
+    flex: 1;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    position: relative;
+    transition: all 0.2s;
+    min-height: 70px;
+}
+
+.tab-btn:hover {
+    color: var(--primary);
+    background: #f0f0f0;
+}
+
+.tab-btn.active {
+    color: var(--primary);
+    background: white;
+}
+
+.tab-btn.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary);
+}
+
+.search-filters {
+    flex: 1;
+    padding: 25px;
+}
+
+.filters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) auto;
+    gap: 20px;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 10px 30px 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    appearance: none;
+    background: #f5f7fa;
+    cursor: pointer;
+}
+
+.select-wrapper .select-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #666;
+}
+
+.toggle-group {
+    display: flex;
+    background: #f5f7fa;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.toggle-group button {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #666;
+}
+
+.toggle-group button.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 10px 12px 10px 35px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #f5f7fa;
+    font-family: var(--font-body);
+}
+
+.input-with-icon svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+}
+
+.show-offers-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 42px;
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+
+.show-offers-btn:hover {
+    background: var(--primary-light);
+}
+
+.filter-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    user-select: none;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkbox-container .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.checkbox-container input:checked+.checkmark {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.checkbox-container input:checked+.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.text-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.text-btn:hover {
+    color: var(--primary);
+}
+
+
+/* NEW SECTIONS STYLES */
+
+.section-margin {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* Suggestions Scroll */
+.suggestions-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    /* Hide scrollbar for cleaner look */
+    scrollbar-width: thin;
+    scrollbar-color: #ddd transparent;
+}
+
+.suggestions-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.suggestions-scroll::-webkit-scrollbar-thumb {
+    background-color: #ddd;
+    border-radius: 3px;
+}
+
+.promo-card {
+    min-width: 250px;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #90caf9;
+}
+
+.promo-icon {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.promo-card h3 {
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.promo-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+.promo-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.suggestion-card {
+    min-width: 280px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+    transition: transform 0.2s;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-5px);
+}
+
+.suggestion-img-wrapper {
+    height: 160px;
+    position: relative;
+}
+
+.suggestion-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-content {
+    padding: 15px;
+}
+
+.suggestion-content h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.suggestion-price {
+    font-weight: 800;
+    color: var(--primary);
+    margin-bottom: 2px;
+}
+
+.suggestion-price small {
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: #888;
+    margin-left: 5px;
+}
+
+.suggestion-leasing {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.suggestion-tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.suggestion-tags span {
+    background: #f5f7fa;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    color: #666;
+}
+
+/* Categories Grid */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background: var(--cat-color, #f0f0f0);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 120px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: scale(1.03);
+}
+
+.category-content h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.category-content p {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.category-icon {
+    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Existing Car Grid Overrides */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding-bottom: 80px;
+}
+
+.car-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.car-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 34, 69, 0.12);
+}
+
+.car-image-container {
+    height: 220px;
+    position: relative;
+}
+
+.car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.car-status {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+
+.car-details {
+    padding: 20px;
+}
+
+.car-title {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.car-specs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.spec-item {
+    background: #f5f7fa;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.car-price {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.view-btn {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* Responsive Overrides for new sections */
+@media (max-width: 1024px) {
+    .filters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-actions {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-interface {
+        flex-direction: column;
+    }
+
+    .search-tabs {
+        flex-direction: row;
+        width: 100%;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .tab-btn {
+        min-height: 50px;
+        border-bottom: 3px solid transparent;
+    }
+
+    .tab-btn.active::before {
+        display: none;
+    }
+
+    .tab-btn.active {
+        border-bottom-color: var(--primary);
+    }
+
+    .filters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        grid-column: span 1;
+    }
+}

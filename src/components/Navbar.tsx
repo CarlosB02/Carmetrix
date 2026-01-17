@@ -33,7 +33,7 @@ const Navbar = () => {
                 <ul className={`nav-links ${isOpen ? 'active' : ''}`}>
                     <li><Link to="/" onClick={() => setIsOpen(false)}>Início</Link></li>
                     <li className="dropdown-container">
-                        <Link to="/#services">Serviços</Link>
+                        <Link to="/#services" onClick={() => setIsOpen(false)}>Serviços</Link>
                         <ul className="dropdown-menu">
                             <li><Link to="/consultoria-importacao" onClick={() => setIsOpen(false)}>Consultoria e Importação</Link></li>
                             <li><Link to="/inspecao-usados" onClick={() => setIsOpen(false)}>Inspeção de Usados</Link></li>
@@ -42,7 +42,8 @@ const Navbar = () => {
                         </ul>
                     </li>
                     <li><Link to="/news" onClick={() => setIsOpen(false)}>Novidades</Link></li>
-                    <li><Link to="/empresas" onClick={() => setIsOpen(false)}>Empresas</Link></li>
+                    <li><Link to="/stands" onClick={() => setIsOpen(false)}>Stands</Link></li>
+                    <li><Link to="/marketplace" onClick={() => setIsOpen(false)}>Marketplace</Link></li>
                     <li><Link to="/contact" onClick={() => setIsOpen(false)} className="btn-nav">Contacte-nos</Link></li>
                 </ul>
             </div>

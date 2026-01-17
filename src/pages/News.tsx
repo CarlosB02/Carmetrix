@@ -8,10 +8,9 @@ const News = () => {
                     width: '100%',
                     height: '60vh',
                     minHeight: '400px',
-                    backgroundImage: 'url("/images/bmw-nature-hero.png")',
+                    backgroundImage: 'url("/images/bmw-cinematic.png")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    marginBottom: '50px',
                     position: 'relative'
                 }}
             >
@@ -21,7 +20,8 @@ const News = () => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, var(--background-default))'
+                    backgroundColor: 'rgba(10, 25, 60, 0.65)',
+                    zIndex: 10
                 }} />
             </div>
 

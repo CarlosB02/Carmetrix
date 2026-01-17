@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 import './ContactSection.css';
 
 const ContactSection = () => {
@@ -30,13 +30,6 @@ const ContactSection = () => {
                                     <p>info@carmetrix.pt</p>
                                 </div>
                             </div>
-                            <div className="contact-detail-item">
-                                <MapPin className="icon" />
-                                <div>
-                                    <h4>Localização</h4>
-                                    <p>Avenida dos Aliados, Porto</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -61,7 +54,7 @@ const ContactSection = () => {
                         </div>
                         <div className="form-group">
                             <label>Mensagem</label>
-                            <textarea rows={5} placeholder="Como podemos ajudar?"></textarea>
+                            <textarea rows={3} placeholder="Como podemos ajudar?"></textarea>
                         </div>
                         <button className="btn btn-primary" style={{ width: '100%' }}>Enviar Mensagem</button>
                     </form>

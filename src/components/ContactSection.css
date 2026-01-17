@@ -1,16 +1,14 @@
 .contact-section {
-    height: 100vh;
-    max-height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px 0;
+    padding: 40px 0;
     background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    overflow: hidden;
-    /* Prevent scrolling within the page if possible */
 }
 
 .contact-container {
@@ -22,20 +20,20 @@
 
 .contact-info h3 {
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: var(--primary);
 }
 
 .contact-info p {
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     line-height: 1.6;
 }
 
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .contact-detail-item {
@@ -68,19 +66,19 @@
 
 .contact-form {
     background: #ffffff;
-    padding: 40px;
+    padding: 25px;
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: var(--shadow);
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: var(--text-secondary);
     font-size: 0.9rem;
 }

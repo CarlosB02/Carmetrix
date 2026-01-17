@@ -1,15 +1,22 @@
 import { motion } from 'framer-motion';
 import { Sparkles, Droplets, Sun, CheckCircle } from 'lucide-react';
 import ContactSection from '../components/ContactSection';
+import ecoWashHero from '../assets/eco-wash-hero.png';
+import ecoWashSide from '../assets/eco-wash-detail-new.png';
+import cardEco from '../assets/card-eco-friendly.png';
+import cardPaint from '../assets/card-paint.png';
+import cardProtection from '../assets/card-protection.png';
+import cardDetailing from '../assets/card-detailing.png';
 
 const EcoWashDetail = () => {
     return (
         <div className="service-page">
             {/* Hero Section */}
             <section className="service-hero" style={{
-                background: 'linear-gradient(rgba(0, 34, 69, 0.9), rgba(0, 34, 69, 0.8)), url("https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2070&auto=format&fit=crop")',
+                background: `linear-gradient(rgba(0, 34, 69, 0.9), rgba(0, 34, 69, 0.8)), url(${ecoWashHero})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
                 padding: '160px 0 100px',
                 color: 'white',
                 textAlign: 'center'
@@ -31,76 +38,131 @@ const EcoWashDetail = () => {
             {/* Content Section */}
             <section className="service-content" style={{ padding: '80px 0' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center' }}>
+                    {/* Top Section: Text + Side Image */}
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', alignItems: 'center', marginBottom: '80px' }}>
                         <div>
-                            <h2 style={{ fontSize: '2.5rem', marginBottom: '30px', color: 'var(--primary)' }}>
+                            <h2 style={{ fontSize: '2.2rem', marginBottom: '30px', color: 'var(--primary)', whiteSpace: 'nowrap' }}>
                                 Detalhe de Excelência
                             </h2>
-                            <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>
-                                O nosso serviço de Eco Wash & Detail combina técnicas avançadas, produtos premium e uma preocupação genuína com o meio ambiente. Não lavamos apenas o seu carro; restauramos o seu brilho original.
+                            <p style={{ marginBottom: '30px', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: '1.6' }}>
+                                O nosso serviço de Eco Wash & Detail combina técnicas avançadas e produtos premium. Restauramos o brilho original do seu automóvel, tratando cada detalhe com precisão e preservando o seu investimento.
                             </p>
-                            <p style={{ marginBottom: '30px', color: 'var(--text-secondary)' }}>
-                                Desde a limpeza profunda de estofos até à correção de pintura e proteção cerâmica, cada detalhe é tratado com precisão cirúrgica.
-                            </p>
+                        </div>
+                        <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', height: '350px' }}>
+                            <img src={ecoWashSide} alt="Detalhe Automóvel Profissional" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        </div>
+                    </div>
 
-                            <div className="benefits-grid" style={{ display: 'grid', gap: '15px' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    <CheckCircle size={20} color="var(--accent)" />
-                                    <span style={{ fontWeight: 500 }}>Lavagem manual ecológica sem água</span>
+                    {/* Bottom Section: 4 Cards Grid */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(4, 1fr)',
+                        gap: '20px'
+                    }}>
+                        {/* Card 1: Eco-Friendly */}
+                        <div style={{ background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ height: '160px', overflow: 'hidden' }}>
+                                <img src={cardEco} alt="Eco Friendly" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            </div>
+                            <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                    <Droplets size={20} color="var(--primary)" />
+                                    <h3 style={{ fontSize: '1.1rem' }}>Eco-Friendly</h3>
                                 </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    <CheckCircle size={20} color="var(--accent)" />
-                                    <span style={{ fontWeight: 500 }}>Higienização profunda de interiores</span>
-                                </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    <CheckCircle size={20} color="var(--accent)" />
-                                    <span style={{ fontWeight: 500 }}>Polimento e correção de pintura</span>
-                                </div>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                    <CheckCircle size={20} color="var(--accent)" />
-                                    <span style={{ fontWeight: 500 }}>Revestimento cerâmico (Ceramic Coating)</span>
-                                </div>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '15px', flex: 1 }}>
+                                    Produtos biodegradáveis que poupam até 150L de água por lavagem.
+                                </p>
+                                <motion.button
+                                    className="btn btn-primary"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    style={{
+                                        width: '100%',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                    Ver Método
+                                </motion.button>
                             </div>
                         </div>
 
-                        <div style={{
-                            background: 'white',
-                            padding: '40px',
-                            borderRadius: '16px',
-                            boxShadow: 'var(--shadow)',
-                            display: 'grid',
-                            gap: '30px'
-                        }}>
-                            <div style={{ display: 'flex', gap: '20px' }}>
-                                <div style={{ background: 'var(--background)', padding: '15px', borderRadius: '12px', height: 'fit-content' }}>
-                                    <Droplets size={32} color="var(--primary)" />
-                                </div>
-                                <div>
-                                    <h3 style={{ marginBottom: '10px' }}>Eco-Friendly</h3>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Utilizamos produtos biodegradáveis e técnicas que poupam até 150L de água por lavagem.</p>
-                                </div>
+                        {/* Card 2: Paint Correction */}
+                        <div style={{ background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ height: '160px', overflow: 'hidden' }}>
+                                <img src={cardPaint} alt="Correção de Pintura" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                             </div>
-
-                            <div style={{ display: 'flex', gap: '20px' }}>
-                                <div style={{ background: 'var(--background)', padding: '15px', borderRadius: '12px', height: 'fit-content' }}>
-                                    <Sparkles size={32} color="var(--primary)" />
+                            <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                    <Sparkles size={20} color="var(--primary)" />
+                                    <h3 style={{ fontSize: '1.1rem' }}>Correção de Pintura</h3>
                                 </div>
-                                <div>
-                                    <h3 style={{ marginBottom: '10px' }}>Correção de Pintura</h3>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Remoção de riscos, "swirls" e hologramas para um acabamento espelhado perfeito.</p>
-                                </div>
-                            </div>
-
-                            <div style={{ display: 'flex', gap: '20px' }}>
-                                <div style={{ background: 'var(--background)', padding: '15px', borderRadius: '12px', height: 'fit-content' }}>
-                                    <Sun size={32} color="var(--primary)" />
-                                </div>
-                                <div>
-                                    <h3 style={{ marginBottom: '10px' }}>Proteção Duradoura</h3>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Proteja o seu investimento contra raios UV, chuva ácida e detritos com os nossos revestimentos.</p>
-                                </div>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '15px', flex: 1 }}>
+                                    Remoção de riscos e hologramas para um acabamento espelhado.
+                                </p>
+                                <motion.button
+                                    className="btn btn-primary"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    style={{
+                                        width: '100%',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                    Restaurar Brilho
+                                </motion.button>
                             </div>
                         </div>
+
+                        {/* Card 3: Protection */}
+                        <div style={{ background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ height: '160px', overflow: 'hidden' }}>
+                                <img src={cardProtection} alt="Proteção Duradoura" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            </div>
+                            <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                    <Sun size={20} color="var(--primary)" />
+                                    <h3 style={{ fontSize: '1.1rem' }}>Proteção Cerâmica</h3>
+                                </div>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '15px', flex: 1 }}>
+                                    Proteção avançada contra raios UV, chuva ácida e detritos.
+                                </p>
+                                <motion.button
+                                    className="btn btn-primary"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    style={{
+                                        width: '100%',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                    Proteger Carro
+                                </motion.button>
+                            </div>
+                        </div>
+
+                        {/* Card 4: Detailing */}
+                        <div style={{ background: 'white', borderRadius: '16px', overflow: 'hidden', boxShadow: 'var(--shadow)', display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ height: '160px', overflow: 'hidden' }}>
+                                <img src={cardDetailing} alt="Detailing Interior" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            </div>
+                            <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                                    <CheckCircle size={20} color="var(--primary)" />
+                                    <h3 style={{ fontSize: '1.1rem' }}>Detailing Interior</h3>
+                                </div>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', marginBottom: '15px', flex: 1 }}>
+                                    Limpeza profunda e higienização de todos os componentes.
+                                </p>
+                                <motion.button
+                                    className="btn btn-primary"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    style={{
+                                        width: '100%',
+                                        fontSize: '0.9rem'
+                                    }}>
+                                    Agendar Limpeza
+                                </motion.button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>

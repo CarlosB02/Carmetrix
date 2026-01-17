@@ -1,0 +1,119 @@
+.hotspot-container {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    /* Reduced from 1100px */
+    margin: 4rem auto;
+    padding: 0 20px;
+}
+
+.hotspot-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    /* Removed large shadow and gradient for cleaner look "without background" feel */
+    background: white;
+}
+
+.hotspot-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hotspot-point {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.hotspot-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--accent, #00d2ff);
+    /* Fallback color */
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hotspot-btn:hover,
+.hotspot-btn.active {
+    transform: scale(1.2);
+}
+
+/* Ping animation */
+.hotspot-ping {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: inherit;
+    opacity: 0.6;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+
+    75%,
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+.hotspot-dot {
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.hotspot-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    /* transform handled by framer-motion to avoid conflict */
+    margin-top: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    pointer-events: none;
+    z-index: 20;
+}
+
+.hotspot-tooltip::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 16px;
+    height: 16px;
+    background: white;
+}
+
+.hotspot-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary, #002245);
+    margin-bottom: 8px;
+    position: relative;
+    /* To sit above arrow */
+}
+
+.hotspot-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary, #666);
+    line-height: 1.5;
+    position: relative;
+}

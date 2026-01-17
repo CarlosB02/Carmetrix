@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Store } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
+    const navigate = useNavigate();
+
     return (
         <section className="hero">
             <div className="hero-overlay"></div>
@@ -20,13 +23,24 @@ const Hero = () => {
                         Experimente o auge da estética automóvel e serviços de performance.
                         Tratamos o seu veículo com a precisão que ele merece.
                     </p>
-                    <motion.button
-                        className="btn btn-primary"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        Explorar Serviços <ArrowRight size={20} style={{ marginLeft: '10px' }} />
-                    </motion.button>
+                    <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                        <motion.button
+                            className="btn btn-primary"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => navigate('/#services')}
+                        >
+                            Explorar Serviços <ArrowRight size={20} style={{ marginLeft: '10px' }} />
+                        </motion.button>
+                        <motion.button
+                            className="btn btn-primary"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={() => navigate('/marketplace')}
+                        >
+                            Explorar Marketplace <Store size={20} style={{ marginLeft: '10px' }} />
+                        </motion.button>
+                    </div>
                 </motion.div>
             </div>
 
