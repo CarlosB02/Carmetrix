@@ -14,7 +14,7 @@ import {
     Heart,
     Wallet,
     Star,
-    ShieldCheck,
+
     Users
 } from 'lucide-react';
 
